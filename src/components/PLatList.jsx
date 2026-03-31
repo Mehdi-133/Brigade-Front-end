@@ -11,7 +11,7 @@ export default function PlateList({ plates }) {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
-      {plates.map((plate) => (
+      {plates.map((plate) => ( 
         <PlateCard key={plate.id} {...plate} />
       ))}
     </div>
