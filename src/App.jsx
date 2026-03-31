@@ -6,12 +6,18 @@ import PlateCard from "./components/PlateCard";
 import "./App.css";
 
 function App() {
+  const plats = [
+    { name: "Pizza", price: 80, is_available: true },
+    { name: "Burger", price: 60, is_available: true },
+    { name: "Tacos", price: 50, is_available: false },
+    { name: "Salad", price: 40, is_available: true },
+  ];
 
   return (
-    <div>
-      <PlateCard name="Pizza" price={75}  is_available={true} />
-      <PlateCard name="Sushi" price={120} is_available={false}  />
-
+    <div className="grid grid-cols-2 gap-4 p-4">
+      {plats.map((plat, index) => (
+        <PlateCard key={index} {...plat} />
+      ))}
     </div>
   );
 }
